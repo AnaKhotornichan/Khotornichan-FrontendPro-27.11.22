@@ -1,61 +1,22 @@
-/* Exercise 1 */
+const arrLength = +prompt("Please, enter an array lenght!");
+const arr = [];
 
-let primaryNumber = 20;
-let alertMsg = "";
-while (primaryNumber <= 30) {
-    alertMsg = alertMsg + primaryNumber + " ";
-    primaryNumber = primaryNumber + 0.5;
+for (let i = 1; i <= arrLength; i++) {
+    let arrEl = +prompt("Please, enter a number!");
+    arr.push(arrEl);
+    console.log(arr);
 }
-alert(alertMsg);
 
-
-/* Exercise 2 */
-
-let usd = 10;
-const uahRate = 27;
-let alertMsg= "";
-while (usd <= 100) {
-    alertMsg = alertMsg + (usd * uahRate) + " ";
-    usd = usd + 10;
-}
-alert(alertMsg);
-
-
-/* Exercise 3 */
-
-let numberN = 50;
-let alertMsg = "";
-for (let i = 1; i <= 100; i++) {
-    let square = i * i;
-    if (square > numberN) break;
-    alertMsg = alertMsg + i + " ";
-}
-alert(alertMsg);
-
-
-/* Exercise 4 */
-
-let num = 6;
-let primeNumber = "This is a prime number!";
-for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
-        primeNumber = "This is not a prime number!";
-        break;
+const arrSorted = arr.sort((firstEl, secondEl) => {
+    if (firstEl > secondEl) {
+        return 1;
+    } else if (firstEl < secondEl) {
+        return -1;
     }
-}
-console.log(primeNumber);
+    return 0;
+});
 
+console.log(arrSorted);
 
-/* Exercise 5 */
-
-let num = 27;
-let result = "You can't get this number by exponentiation of the number 3!";
-for (let i = 2; i < num; i++) {
-    if (Math.pow(3, i) === num) {
-        result = "You can get this number by exponentiation of the number 3!";
-        break;
-    }
-}
-console.log(result);
-
-
+arrSorted.splice(1,3);
+console.log (arrSorted);
